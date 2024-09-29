@@ -40,6 +40,12 @@ const Board = () => {
       return;
     }
 
+    const isTie = copy.every(cell => cell !== null);
+    if (isTie) {
+      setWinner("It's a Tie! Play again");
+      return;
+    }
+
     setTurn(turn === "X" ? "O" : "X");
   };
 
@@ -51,8 +57,8 @@ const Board = () => {
 
   return (
     <div className="flex flex-col justify-center items-center">
-      <h1 className="text-5xl border-b-4 text-center m-2">Tik-Tac-Toe</h1>
-      <h1 className="text-5xl text-center m-2">Winner : {winner}</h1>
+      <h1 className="text-5xl border-b-4 text-center m-2">Tic-Tac-Toe</h1>
+      <h1 className="text-3xl text-center m-2">Winner : {winner}</h1>
       <div className="flex w-[564px] h-[600px] m-auto">
         <div className="space-y-2">
           <div
@@ -134,7 +140,7 @@ const Board = () => {
         </div>
       </div>
       <button
-        className="text-2xl p-3 bg-red-500 w-[150px] rounded-full hover:bg-red-600"
+        className="text-2xl p-3 bg-red-500 w-[150px] rounded-full hover:bg-red-600 hover:scale-105 transition"
         onClick={() => {
           resetGame();
         }}
@@ -145,3 +151,4 @@ const Board = () => {
   );
 };
 export default Board;
+
