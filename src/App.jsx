@@ -1,9 +1,9 @@
-import Board from "./Components/Board"
+import BoardP from "./Components/BoardP"
 
 function App() {
   return (
     <>
-    <Board/>
+    <BoardP/>
     </>
   )
 }
